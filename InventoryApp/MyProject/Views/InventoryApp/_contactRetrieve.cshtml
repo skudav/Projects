@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+     <style type="text/css">
+         .gridTable {border: 1px #c8c8c8 solid;border-collapse: collapse;min-width: 660px; background-color: #fff;}
+       .gridHead th{font-weight: bold;background-color:#969696;color:#515151; padding: 3px 10px;;text-align: left}
+        .gridHead a:link,.gridHead a:visited,.gridHead a:active,.gridHead a:hover {color:#3e3e3e; font-family:Arial; font-size:13px}
+        .gridHead a:hover {text-decoration:none;}
+        .gridTable tr.gridRow{background-color: #FFFFFF; font-family: Arial; font-size: 11px;}
+        .gridTable tr.gridRow:hover{background-color:#EBEBEB;}
+         .gridTable tr.gridAltRow{background-color: #FFFFFF;}
+        .gridTable tr.gridAltRow:hover{background-color:#EBEBEB;}
+        .gridTable tr:hover{background-color: white;}
+        .gridAltRow td{padding: 3px 10px;margin: 5px; color: #333; font-family: Arial; font-size: 11px;}
+        .gridRow td{padding: 3px 10px;color: #333; font-family: Arial; font-size: 11px;}
+        .gridRow a{padding: 3px 10px;color: #333; font-family: Arial; font-size: 12px; font-weight:600; text-decoration:none}
+        .gridAltRow a{padding: 3px 10px;color: #333; font-family: Arial; font-size: 12px; font-weight:600; text-decoration:none}
+        .gridRow a:hover{padding: 3px 10px;color: #0088CC; font-family: Arial; font-size: 12px; font-weight:600; text-decoration: underline}
+        .gridAltRow a:hover{padding: 3px 10px;color: #0088CC; font-family: Arial; font-size: 12px; font-weight:600; text-decoration:underline}
+        .gridFooter td{padding: 3px 10px;color: white;font-family: Arial; font-size: 11px;text-align: center;}
+        .gridFooter a{font-weight: bold;color: #ccc; border: 1px #333 solid; background-color:#07466D}
+    </style>
+   <script type="text/javascript" src="../../Scripts/contactRetrieve.js"></script>
+</head>
+<body>
+    <div>
+        @{
+              var contactGrid = new WebGrid(Model, rowsPerPage: 3, ajaxUpdateContainerId: "grider", ajaxUpdateCallback: "getAjaxCode");
+        }
+        @contactGrid.GetHtml(tableStyle: "gridTable",
+         headerStyle: "gridHead",
+         footerStyle: "gridFooter",
+         rowStyle: "gridRow",
+         mode: WebGridPagerModes.Numeric,
+         htmlAttributes: new { id = "grider" },
+         alternatingRowStyle: "gridAltRow",
+          columns: contactGrid.Columns(
+                    contactGrid.Column(header: "", format: @<text><input style="width:1px; cursor:pointer" id="assignChkBx" name="assignChkBx" type="checkbox" value="@item.assetCode"/></text>),
+                     contactGrid.Column("itemId", "Org ID"),
+                     contactGrid.Column("assetCode", "Contact Id"),
+                                             contactGrid.Column("orgContact", "First Name"),
+                                             contactGrid.Column("orgSecContact", "Last Name"),
+                                             contactGrid.Column(header: "", format: @<text><img src="../../Ribbon/images/delete.png" id="delete_contact" style=" cursor:pointer" alt="Delete contact" /></text>)
+            )
+        )
+       
+       
+  </div>
+</body>
+</html>

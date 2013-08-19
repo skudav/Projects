@@ -1,0 +1,136 @@
+﻿
+@{
+    Layout = null;
+}
+   
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" content="" />
+        <title>Login     - DSM India</title>
+        <link href="/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        <link rel="stylesheet" href="/Content/Site.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/Content/smoothmenu.css" />
+        <!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+    
+        @Scripts.Render("~/bundles/jquery")
+        <script type src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>     
+        <script src="/Scripts/jquery.collapse.js"  type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"  type="text/javascript"> </script>
+     <script type="text/javascript" src="../../Scripts/jquery.validate.js"></script>
+        <script type="text/javascript">
+           
+        </script>
+       
+         <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.core.js"></script>
+	     <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.widget.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.mouse.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.button.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.draggable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.position.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.resizable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.dialog.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.effects.core.js"></script>   
+         <script type="text/javascript" src="../../Scripts/loginscript.js"></script> 
+           <style type="text/css">
+   
+       .error{
+       
+            background-color:#E1E0CE;
+            color:#ff0000;    
+            font-size: 14px;
+        }
+       </style>
+    </head>
+  <body >
+ <div class="shell">
+  <div class="border">
+    <div id="header">
+      <h1 id="logo"><a href="#" class="notext">DSMINDIA</a></h1>
+      
+      
+      <div class="cl">&nbsp;</div>
+    </div>
+       
+    <div id="main">
+         <div  id="content" class="left" style="width:933px" >
+                 <div id="body">
+         <div>
+  
+         <h2 style=" font-size:30px;  padding:25px 10px 15px 10px">Welcome to Inventory System</h2>
+       <div style=" float:left; padding:10px 45px 30px 10px">
+             <img src="/Images/contact.jpg"  style=" float:left; padding:25px 8px 30px 20px; width:512px"  />
+             <br />
+        </div>
+
+        <div style=" padding-left:60px">
+                
+                <form id="login_formsss" method="post" action ="/InventoryApp/Authentic">
+                <br /><br />
+                <table style=" padding:10px 25px; background: #F2F2F2  ; font-family: Cambria; font-size:18px; width:270px; height:350px" >
+                        <tr>
+                            <td>    
+                                <h2 style=" font-size:24px;  padding:10px 10px 14px 10px">Sign in</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="  padding:3px 10px ">
+                        
+                             UserName :
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:2px 10px 10px 10px">
+                                <input type="text" name="fname" id="fname"  style="width:200px; height:20px " />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="  padding:6px 10px ">
+                                Password :
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:2px 10px 10px 10px">
+                                 <input type="password" name="password" id="pass"  style="width:200px; height:20px " /></td>
+                        </tr> 
+                
+                         <tr>
+                              <td style="  padding:15px 10px 18px 10px ">
+                                    <input type="submit" value="Submit" style="height:30px; width:68px;
+                                         font-size:18px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							     box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF; font-weight:400px" />
+                                         <span  style="padding-left:40px">
+                                             <input type="reset" value="Clear" style="height:30px; width:68px;
+                                             font-size:18px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							     box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF; font-weight:400px" />
+                                         </span>
+                                       
+                              </td>
+                         </tr>
+                  </table>  
+            
+                </form>  
+   
+            </div>
+    </div>
+
+      </div>
+        </div>
+       
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div class="shadow-l"></div>
+    <div class="shadow-r"></div>
+    <div class="shadow-b"></div>
+  </div>
+@*  <div id="footer">
+    <p style="text-align:center">Copyright &copy; 2013, <a href="#">DSM INDIA</a>. All Rights Reserved | Designed By <a href="#">DSMINDIA</a></span></p>
+    <div class="cl"></div>
+  </div>*@
+</div>
+</body>
+</html>
+

@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "Business";
+}
+
+<div id="content" class="left" >
+         <div  id="content" class="left" >
+            <div id="topbar" style="margin-left:-18px">
+                     <form style="padding:1px 0;">
+                    &nbsp;
+                    <button id="save_organisation" style="padding:2px; width:120px; background:#2B393B ">
+                    <img src="/Images/save.png" style="width:28px ; height:22px" alt="" /><br />
+                    <span  style="font-size:11px; font-weight:600; color:#fff; padding-left:1px">Save Organization</span></button>
+                    &nbsp;
+                     <button id="createuser" class="first_disable" style="padding:2px;  width:105px; background:#2B393B">
+                     <img src="/Images/add.png" style="width:28px ; height:22px" /><br />
+                     <span style="font-size:11px; font-weight:600; color:#fff; padding-left:1px">Add Address</span></button>
+                      &nbsp;
+                     <button  class="first_disable" style="padding:2px 0;  width:116px; background:#2B393B">
+                     <img src="/Images/add.png" style="width:28px ; height:22px" /><br>
+                     <span style="font-size:11px; font-weight:600; color:#fff; padding-left:1px "> Add Business unit</span></button> 
+                      &nbsp;
+                     <button  class="first_disable" style="padding:2px;  width:110px; background:#2B393B">
+                     <img src="/Images/add.png" style="width:28px ; height:22px" /><br>
+                     <span style="font-size:11px; font-weight:600; color:#fff;  padding-left:1px">Add  Contact</span></button> 
+                     
+                      &nbsp;
+                     <button  class="first_disable"  style="padding:2px ;  width:105px; background:#2B393B ">
+                     <img src="/Images/add.png" style="width:28px ; height:22px" /><br>
+                     <span style="font-size:11px; font-weight:600; color:#fff; padding-left:1px">Create Contract</span></button> 
+                      &nbsp;
+                     <button  class="first_disable"  style="padding:2px ;  width:105px; background:#2B393B ">
+                     <img src="/Images/service.png" style="width:28px ; height:22px" /><br>
+                     <span style="font-size:11px; font-weight:600; color:#fff; padding-left:1px">Create Ticket</span></button> 
+                </form>
+          
+             </div>
+        </div>
+
+ <div  id="content" class="left" style="height: 450px; overflow-y: scroll;" >
+     <div class="highlight">
+         <br />
+		  <h1 style="color:#07466D; font-size:25px">Business Information</h1>
+         
+           <form id="org_id" action="#">
+					<table style="font-family: Georgia; font-size:13px; color:#07466D; padding:10px 10px; 
+                        background: #EDF4F5 ; width:680px" >
+							<tr>
+								<td colspan="2"><h2 style="font-size:18px; ">Business Details</h2>
+								</td>
+							 </tr>
+							<tr>
+								<td>Organization Id:</td>
+								<td><input name="text" style="height:20px; "  /> </td>
+								<td>Organization Created on:</td>
+								<td><input type="text"  style="height:20px; width:100px " class="tcal" /></td>
+							</tr>
+														
+							<tr>
+							<td>Organization Name:</td>
+							<td><input type="text" id="org_name" style="height:20px" ></td>
+							<td>Organization Category:</td>
+							<td> <select name="Department"   >
+							    <option value="Human Resource" style="height:20px; " selected>Human Resource</option>
+							    <option value="Finance" style="height:20px; ">Finance</option>
+							    <option value="Sales" style="height:20px; " >Sales</option>
+							    <option value="Operations" style="height:20px; " >Operations</option>
+							    <option value="Purchase" style="height:20px; ">Purchase</option>
+							    <option value="Stores" style="height:20px; ">Stores</option>
+							</select></td>
+							</tr>
+													
+							<tr>
+							<td>Organization Address ID:</td>
+							<td><input type="text"   style="height:20px; "  ></td>
+							<td>Organization Contact ID:</td>
+							<td><input type="text"  style="height:20px; " ></td>
+							</tr>
+							
+							<tr>
+							<td>Organization Primary Contact:</td>
+							<td><input type="text"   style="height:20px; " ></td>
+							<td>Organization Secondary Contact:</td>
+							<td><input type="text"    style="height:20px; " ></td>
+							</tr>
+				</table>
+		  </form>
+      
+        
+        <br />
+              <div class="col c1" style="width:680px">
+ 		             <div id="accordion-example" data-collapse="accordion"> 
+                          <h3>Address Details</h3>
+				                <div id="add_show" style="background:#EDF4F5">
+					                
+				                </div>
+			                <h3>Business Unit Details</h3>
+				                <div style="background:#EDF4F5">
+                                    This is some information
+                                </div>
+			                <h3>Contact Details</h3>
+				                <div style="background:#EDF4F5">
+					                  This is some information
+				                </div>
+                             <h3>Contract Details</h3>
+				                <div style="background:#EDF4F5">
+					                  This is some information
+				                </div>
+                             <h3>Ticket Details</h3>
+				                <div style="background:#EDF4F5">
+					                  This is some information
+				                </div>
+                                <br />
+                       </div>
+                </div>
+           
+          </div>
+          <div id ="alert_dialog" style="vertical-align:middle">
+         
+             <form id="add_id" action="/InventoryApp/_add_Partial">
+					<table style="font-family: Georgia; font-size:13px; color: #732C7B; padding:10px 10px; 
+                        background: #EDF4F5 ; width:624px" >
+							
+							<tr>
+								<td>Id :</td>
+								<td><input name="a_id" type="text" id="a_id" style="height:20px; "  /> </td>
+								<td>Address Created Date :</td>
+								<td><input type="text" name="a_date" id="a_date"  style="height:20px; width:135px"  class="tcal" /></td>
+							</tr>
+														
+							<tr>
+							<td>Address Owner ID :</td>
+							<td><input type="text" name="a_ownerID" style="height:20px;" ></td>
+							<td>Address Category :</td>
+							<td> <select name="Department">
+							<option value="Category1" style="height:20px; width:140px" selected>Category1</option>
+							<option value="Category2" style="height:20px; width:140px">Category2</option>
+							
+							</select></td>
+							</tr>
+													
+							<tr>
+							<td>Address Line1 :</td>
+							<td><input type="text" name="address_line1" style="height:20px; " /></td>
+							<td>Address Line2 :</td>
+							<td><input type="text" name="address_line2" style="height:20px; " /></td>
+							</tr>
+							
+							<tr>
+							<td>Address City :</td>
+							<td><input type="text" name="add_city" style="height:20px; "/ ></td>
+							<td>Address Pincode :</td>
+							<td><input type="text" name="add_pincode" style="height:20px; " /></td>
+							</tr>
+							
+							<tr>
+							<td>Address State :</td>
+							<td><input type="text" name="add_state" style="height:20px; " /></td>
+							<td>Address Country :</td>
+							<td><input type="text" name="add_country" style="height:20px; " /></td>
+							</tr>
+							
+							<tr>                              
+								
+								<td></td>
+								<td style="padding: 18px 0 14px 80px"  ><input type="submit" id="add_submit" value="Submit" style="height:28px; width:65px; 
+								font-size:16px; background:#FF3300; color:#FFFFFF"/> </td>
+								<td style="padding: 18px 0 14px 60px" > <input  type="reset" value="Reset" style="height:28px; width:60px; 
+								font-size:16px; background: #FF3300 ; color:#FFFFFF" /><br></td>
+                                <td></td>
+							
+							</tr>
+					</table>
+		         </form>
+          
+          </div>
+    </div>
+
+</div>

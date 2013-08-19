@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "StoreSearch";
+}
+
+
+                     <div class="ribbon">
+                          <div id="rib">        
+                                 <div class="ribmenu"  id="new_store">
+                                      <img src="../../Ribbon/images/save_org.png" alt="New Store" />
+                                     &nbsp; Add Store &nbsp;
+                                 </div>
+                          </div>
+                        @* <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu" id="createuser">
+                                  <img src="../../Ribbon/images/address.png" alt="Add Address" />
+                                 Add Address
+                             </div>
+                         </div>
+                          <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu" >
+                                  <img src="../../Ribbon/images/business.png" alt="Add Business Unit" />
+                                 Add Business Unit
+                             </div>
+                         </div>
+                          <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/contact.png" alt="Add Contact" />
+                                 Add Contact
+                             </div>
+                         </div>
+                         <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/contract.png" alt="Create Contract" />
+                                 Create Contract
+                             </div>
+                         </div>
+                         <div class="first_disable" id="rib"  style="border-right:none" >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/ticket.png" alt="Create Ticket" />
+                                 Create Ticket
+                             </div>
+                         </div>*@
+                      </div>
+           
+
+<form id="search_form" action="/InventoryApp/SearchResults" action="post" style=" padding-top:5px">
+        <table style="font-family: Arial; font-size:11px; color:#294781; padding:0px 10px; 
+                                background: #ECECEC ; width:680px; border:1px solid #999999" >
+        <tr>
+            <td colspan="4"><h2 style="font-size:16px; padding-bottom:4px ">Search Store</td>
+        </tr>
+        <tr style="height:26px; padding-top:10px">
+             <td style="width:130px">Store Name :</td>
+             <td style="width:190px"><input type="text" name="search_part" style="height:20px; width:150px" /></td>
+             <td style="width:130px">Model No :</td>
+             <td style="width:190px"><input type="text" name="search_model" style="height:20px; width:155px" /></td>
+            
+        
+        </tr>
+
+       <tr style="height:28px">                            
+			<td colspan="2"></td>
+			<td style="padding: 4px 10px 6px 40px; float:right"  >
+                 <input type="submit" class="submit" id="add_submit" value="Search" /> </td>
+         	<td style="padding: 4px 0px 6px 90px;" > <input  type="reset"   class="reset" value="Reset" style="" /></td>
+       </tr>
+     
+        </table>
+</form>
+<div id="search_replace"></div>

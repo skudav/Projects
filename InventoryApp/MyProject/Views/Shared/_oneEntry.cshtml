@@ -1,0 +1,61 @@
+﻿
+
+ <form id="add_update" action="/InventoryApp/addAddress">
+					<table style="font-family: Georgia; font-size:13px; color:#294781; padding:10px 0px; 
+                        background: #ECECEC ; width:624px" >
+							
+							<tr style="height:26px">
+								<td>Id :</td>
+								<td><input name="a_id" type="text" style="height:20px;" value="@ViewData["ID"]"  /> </td>
+								<td>Address Created Date :</td>
+								<td><input type="text" name="a_date" style="height:20px; " value="@ViewData["addressDate"]"   class="tcal" /></td>
+							</tr>
+														
+							<tr style="height:26px">
+							<td>Address Owner ID :</td>
+							<td><input type="text" name="a_ownerID" style="height:20px; " value="@ViewData["addressOwnerID"]"  /></td>
+							<td>Address Category :</td>
+							<td> <select name="Department">
+							<option value="Category1" style="height:20px; " selected="@ViewData["addressCategory"]">Category1</option>
+							<option value="Category2" style="height:20px; ">Category2</option>
+							
+							</select></td>
+							</tr>
+													
+							<tr style="height:26px">
+							<td>Address Line1 :</td>
+							<td><input type="text" name="address_line1" style="height:20px; "  value="@ViewData["addressLine1"]" /></td>
+							<td>Address Line2 :</td>
+							<td><input type="text" name="address_line2" style="height:20px; "  value="@ViewData["addressLine2"]" /></td>
+							</tr>
+							
+							<tr style="height:26px">
+							<td>Address City :</td>
+							<td><input type="text" name="add_city" style="height:20px; "  value="@ViewData["addressCity"]" /></td>
+							<td>Address Pincode :</td>
+							<td><input type="text" name="add_pincode" style="height:20px; " value="@ViewData["addressPincode"]" /></td>
+							</tr>
+							
+							<tr style="height:26px">
+							<td>Address State :</td>
+							<td><input type="text" name="add_state" style="height:20px; " value="@ViewData["addressState"]" /></td>
+							<td>Address Country :</td>
+							<td><input type="text" name="add_country" style="height:20px; " value="@ViewData["addressCountry"]" /></td>
+							</tr>
+							
+							<tr style="height:26px">                              
+								
+								<td></td>
+								<td style="padding: 18px 0 14px 80px"  >
+                                <input type="submit" id="add_update" value="Update" style="height:28px; width:65px;
+								font-size:16px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							     box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF" /> </td>
+								<td style="padding: 18px 0 14px 60px" > <input type="reset" value="Reset" style="height:28px;  width:60px; 
+								font-size:16px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							     box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF" /><br></td>
+                                <td></td>
+							
+							</tr>
+					</table>
+		         </form>
+           

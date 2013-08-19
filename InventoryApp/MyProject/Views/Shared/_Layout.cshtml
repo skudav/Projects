@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" content="" />
+        <title>@ViewBag.Title - DSM India</title>
+        <link href="/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        <link rel="stylesheet" href="/Content/Site.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/Content/smoothmenu.css" />
+        <link rel="stylesheet" type="text/css" href="/Content/collapse.css" />
+        <link rel="stylesheet" href="/Content/autocomplete.css" type="text/css" />
+         <link href="/Content/ribbon.css" rel="Stylesheet" type="text/css" />
+
+          
+        <!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+    
+        @Scripts.Render("~/bundles/jquery")
+             
+        <script src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+         <script type="text/javascript" src="/Scripts/validationCode.js"></script>    
+   
+        <script src="/Scripts/collapse.js"  type="text/javascript"></script>
+        
+        <script src="/Scripts/smoothmenu.js"  type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"  type="text/javascript"> </script>
+        <script type="text/javascript" src="/Scripts/tokeninput.js"></script>
+        
+         <script type="text/javascript" src="../../Scripts/jquery.validate.js"></script>
+         <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.core.js"></script>
+	     <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.widget.js"></script>
+	    
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.button.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.draggable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.position.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.resizable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.dialog.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.effects.core.js"></script>   
+
+        
+    </head>
+  <body >
+ <div class="shell">
+  <div class="border">
+    <div id="header">
+      <h1 id="logo"><a href="#" class="notext">DSMINDIA</a></h1>
+      <div class="socials right" style="font-size:14px">
+        @if (Request.IsAuthenticated)
+        {
+            <strong>@Html.Encode(User.Identity.Name)</strong><span> &nbsp;  | &nbsp; </span>
+            @Html.ActionLink("Log Out", "LogOff", "InventoryApp")
+            
+        }
+        else
+        {
+            @Html.ActionLink("Log In", "Login", "InventoryApp")
+        }
+      </div>
+      
+      <div class="cl">&nbsp;</div>
+    </div>
+       
+    <div id="main">
+       
+      <div id="content" class="left" >
+         <div  id="content" class="left" >
+                 <div id="body" style="height:490px">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+             @RenderBody()
+            </section>
+        </div>
+        </div>
+      
+      </div>
+       <div id="sidebar" class="right">
+             
+				<div id="smoothmenu2" class="ddsmoothmenu-v">
+				    <ul>
+				        <li><a href="/InventoryApp/Index">Dashboard</a></li>
+				        <li><a href="#">Items</a>
+                           <ul>
+                                 <li><a href="/InventoryApp/Search">Items</a></li>
+                                <li><a href="/InventoryApp/MasterSearch">Item's Master</a></li>
+                                <li><a href="/InventoryApp/StoreSearch">Store location</a></li>
+				          
+                           </ul>                        
+                        </li>
+                       
+                        @{
+                            //if (@Html.Encode(User.IsInRole("Admin")).ToString() == "True")
+                            //{
+                               <li>@Html.ActionLink("Delivery Challan", "DeliveryChallan", "InventoryApp")
+                               @*<ul>
+
+                                <li><a href="/InventoryApp/Business">Register</a></li>
+				                <li><a href="#">Search</a></li>				                
+                           </ul>   *@                     
+                        </li>
+                            
+                           } 
+
+                          <li><a href="#">Procurements</a>
+                           <ul>
+                                <li><a href="#">Quotations</a>
+                                    <ul>
+                                            <li><a href="#" style=" font-size:12px">Quotations</a></li>
+                                         <li><a href="#" style=" font-size:12px">Pending Quotations</a> </li>
+                                    </ul>
+                                </li>
+				                <li><a href="#">Vendors</a></li>	
+                                 <li><a href="#">Purchase Order</a></li>				                
+                           </ul>  
+                        </li> 
+                       
+                         <li><a href="#">Couriers</a>
+                           @*<ul>
+                                <li><a href="#">Create Ticket</a></li>
+				                <li><a href="#">Search Ticket</a></li>				                
+                           </ul> *@ 
+                        </li> 
+                         <li><a href="#">Stock Reconciliation</a>
+                           @*<ul>
+                                <li><a href="#">Create Ticket</a></li>
+				                <li><a href="#">Search Ticket</a></li>				                
+                           </ul> *@ 
+                        </li> 
+                          <li><a href="#">Administration</a>
+                           <ul>
+                                <li><a href="#">User Management</a></li>
+				             			                
+                           </ul>  
+                        </li> 
+				        <li><a href="#">Reports</a>
+                             @*<ul>
+                                <li><a href="/InventoryApp/Search">Create Contract</a></li>
+				                <li><a href="#">Search Contract</a></li>				                
+                           </ul>   *@
+                        </li>
+				        
+				     </ul>
+				    <br style="clear: left" />
+				</div>
+            
+      </div>
+      <div class="cl">&nbsp;</div>
+    </div>
+    <div class="shadow-l"></div>
+    <div class="shadow-r"></div>
+    <div class="shadow-b"></div>
+  </div>
+ 
+</div>
+</body>
+</html>

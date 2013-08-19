@@ -1,0 +1,279 @@
+﻿     @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        <link rel="stylesheet" href="/Content/Site.css" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/Content/smoothmenu.css" />
+        <!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+        <link rel="stylesheet" type="text/css" href="/Content/collapse.css" />
+        <link rel="stylesheet" href="/Content/autocomplete.css" type="text/css" />
+         <link href="/Content/ribbon.css" rel="Stylesheet" type="text/css" />
+
+        @Scripts.Render("~/bundles/jquery")
+        <script type src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+         <script type="text/javascript" src="../../Scripts/validationCode.js"></script>  
+            
+        <script src="/Scripts/collapse.js"  type="text/javascript"></script>
+        
+        <script src="/Scripts/smoothmenu.js"  type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"  type="text/javascript"> </script>
+       <script type="text/javascript" src="/Scripts/tokeninput.js"></script>
+
+
+         <script type="text/javascript" src="../../Scripts/jquery.validate.js"></script>
+         <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.core.js"></script>
+	     <script type="text/javascript"  src="~/Scripts/ui/jquery.ui.widget.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.mouse.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.button.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.draggable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.position.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.resizable.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.ui.dialog.js"></script>
+	     <script type="text/javascript" src="~/Scripts/ui/jquery.effects.core.js"></script>  
+
+         
+   <div  id="content" class="left" style="margin-right:-80px"  onblur="this.focus()">
+                 <div id="body"> 
+    
+                     <div class="ribbon">
+                         <div id="rib">        
+                                 <div class="ribmenu"  id="save_organisation">
+                                      <img src="../../Ribbon/images/save.png" alt="Save Organization" />
+                                     Save <br />&nbsp;&nbsp; Item &nbsp;&nbsp;
+                                 </div>
+                         </div>
+                         <div class="first_disable" id="rib">        
+                             <div class="ribmenu" id="createuser">
+                                  <img src="../../Ribbon/images/address.png" alt="Add Address" />
+                                 Movement<br />Log
+                             </div>
+                         </div>
+                          <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu" >
+                                  <img src="../../Ribbon/images/business.png" alt="Add Business Unit" />
+                                 Add Business<br /> Unit
+                             </div>
+                         </div>
+                          <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/contact.png" alt="Add Contact" />
+                                 Add <br />Contact
+                             </div>
+                         </div>
+                         <div class="first_disable" id="rib"   >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/contract.png" alt="Create Contract" />
+                                 Create<br /> Contract
+                             </div>
+                         </div>
+                         <div class="first_disable" id="rib"  style="border-right:none" >        
+                             <div class="ribmenu">
+                                  <img src="../../Ribbon/images/ticket.png" alt="Create Ticket" />
+                                 Create <br />Ticket
+                             </div>
+                         </div>
+                      </div>
+       
+          
+             <form id="itemform_id" action="#">
+					<table style="font-size:12px; font-weight:400; color:#294781; padding:0px 10px 10px 10px; background:#ECECEC ; width:680px; 
+					margin-top:5px; border: 1px solid #999999; " >
+						    <tr>
+								<td colspan="6"><h2 style="font-size:18px; ">Item Information</h2>
+								</td>
+							</tr>
+							<tr style="height:26px">
+								<td>Asset ID:</td>
+								<td> 
+                                  @{
+                                    if (@Model == null)
+                                    {
+                                        @Html.Raw("<input type=text class=organi_id name=item_id style=height:20px;/>")
+                                        @Html.Raw("</td>")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw("<input type=text class=organi_id value =")
+                                        @Html.Raw(@Model.itemId)
+                                        @Html.Raw(" name=item_id readonly=readonly disabled=disabled style=height:20px;/>")
+                                        @Html.Raw("</td>")
+                                    }
+                                }                          
+                                
+                                <td>Asset Code:</td>
+								<td><input type="text"  name="asset_code" style="height:20px "  /></td>
+                                 <td>Category:</td>
+								<td> 
+                                    <select name="category">
+                                        <option value="" style="height:20px;" selected>Select Category</option>
+							            <option value="Category1" style="height:20px;">Hardware</option>
+							            <option value="Category2" style="height:20px;">Network</option>
+                                     </select>
+                                </td>
+							</tr>
+														
+							<tr style="height:26px">
+							    <td>Part Name:</td>
+                              <td>
+							    @{
+                                    if (@Model == null)
+                                    {
+                                        @Html.Raw("<input type=text name=part_name style=height:20px;/>")
+                                        @Html.Raw("</td>")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw("<input type=text value =")
+                                        @Html.Raw(@Model.itemName)
+                                        @Html.Raw(" name=part_name style=height:20px;/>")
+                                        @Html.Raw("</td>")
+                                    }
+                                }     
+							    <td>Part Description:</td>
+							    <td> 
+                                    <textarea name="part_description" ></textarea>
+                            
+                                 </td>
+                                 <td>Model No:</td>
+							         <td>      <input type="text" name="model" />
+                                 </td>
+					    	</tr>
+													
+					    	<tr style="height:26px">
+                                    <td>Part Serial No:</td>
+								    <td><input type="text"  name="serial_no" style="height:20px " /></td>
+							        <td>Type:</td>
+                                    <td>
+                                      <select name="type">
+                                        <option value="" style="height:20px;" selected>Select Type</option>
+							            <option value="Category1" style="height:20px;">New</option>
+							            <option value="Category2" style="height:20px;">Refubished</option>
+                                       </select>
+                                    </td>
+							 
+							
+							        <td>Manufacturer:</td>
+							        <td><input type="text" name="manufacturer" style="height:20px; " ></td>
+
+                			</tr>
+							
+							<tr style="height:26px">
+							         <td>Warranty start Date:</td>
+							        <td><input type="text" name="warranty_start" class="tcal" style="height:20px; " ></td>
+                                 
+							
+							        <td style="width:180px">Warranty End Date:</td>
+                                    <td  style="width:8px"><input type=text name="warranty_end" class="tcal" style="height:20px" />
+                                     </td>
+                                    <td style="width:200px">Contract No:</td>
+							        <td ><input type="text" name="contract_no"  style="height:20px" /></td>
+						    </tr>
+							
+						    <tr style="height:26px">
+													
+							        <td style="width:200px">AMC from Manufacturer:</td>
+							        <td ><select name="amc_manufacturer">
+                                         <option value="Category1" style="height:20px;">Yes</option>
+							            <option value="Category2" style="height:20px;">No</option>
+                                       </select>
+                                    </td>
+                                   <td style="width:200px">In-use:</td>
+							        <td ><select name="in_use">
+                                         <option value="Category1" style="height:20px;">Yes</option>
+							            <option value="Category2" style="height:20px;">No</option>
+                                       </select>
+                                    </td>
+                                 
+                                     <td colspan=2></td>
+							
+						</tr>
+                            
+				</table>
+		  </form>
+            <br />
+              <div class="col c1" style="width:680px" >
+ 		             <div id="accordion-example" data-collapse="accordion"> 
+                          <h3>Movement Log Details</h3>
+				                <div id="add_show" style="background:#F2F2F2">
+					                
+				                </div>
+			                <h3>Business Unit Details</h3>
+				                <div style="background:#f8f8f8">
+                                    
+                                </div>
+			                <h3 id = "contactDetails">Contact Details</h3>
+				                <div style="background:#f8f8f8" id="contact_replace">
+					                  
+				                </div>
+                             <h3>Contract Details</h3>
+				                <div style="background:#f8f8f8">
+					                 
+				                </div>
+                             <h3>Ticket Details</h3>
+				                <div style="background:#f8f8f8">
+					                 
+				                </div>
+                                <br /> <br /> <br /> <br /> <br /><br /> <br /> <br /> <br /> <br />
+                       </div>
+                </div>
+           
+          </div>
+          <div id ="alert_dialog" style="vertical-align:middle">
+         
+             <form id="add_id" action="/InventoryApp/addAddress">
+					<table style="font-family: Georgia; font-size:13px; color: #294781; padding:10px 10px; 
+                        background: #ECECEC ; width:624px" >
+							
+							<tr style="height:26px">
+								<td>Log No:</td>
+								<td><input name="log_no" type="text" style="height:20px; "  /> </td>
+								<td>Title :</td>
+								<td><input type="text" name="title" style="height:20px" " ></td>
+							</tr>
+														
+							<tr style="height:26px">
+							    <td>Description :</td>
+							    <td> <textarea name="log_description" ></textarea></td>
+							    <td>Created by :</td>
+							    <td><input type="text" name="created_by" style="height:20px" " ></td>    
+                           
+							</tr>
+													
+							<tr style="height:26px">
+							    <td>Delivery challan no. :</td>
+							    <td><input type="text" name="delivery_challan" style="height:20px; " ></td>
+							    <td>Start Date :</td>
+							    <td><input type="text" name="start_date" class="tcal" style="height:20px; " ></td>
+							</tr>
+							
+							<tr style="height:26px">
+							    <td>Source Destination :</td>
+							    <td><input type="text" name="source_destination" style="height:20px;" /> </td>
+							    <td>End destination :</td>
+							    <td><input type="text" name="end_destination" style="height:20px; " /></td>
+							</tr>
+							
+							<tr style="height:26px">
+							    <td>Status :</td>
+							    <td><input type="text" name="status" style="height:20px; " ></td>
+							    <td>End date :</td>
+							    <td><input type="text" name="end_date" class="tcal" style="height:20px; " ></td>
+							</tr>
+							
+							<tr style="height:26px">                            
+								
+								<td></td>
+								<td style="padding: 18px 0 14px 80px"  ><input type="submit" id="add_submit" value="Submit" style="height:28px; width:65px; 
+								font-size:16px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							 box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF"/> </td>
+								<td style="padding: 18px 0 14px 60px" > <input id="resetDialog" type="reset" value="Reset" style="height:28px; width:60px; 
+								font-size:16px; background:-moz-linear-gradient(center top , #37AAEA, #117ED2) repeat scroll 0 0 transparent; cursor:pointer;
+							 box-shadow:0 1px 1px 0 #6FC5F5 inset; color:#FFFFFF"><br></td>
+                                <td></td>
+							
+							</tr>
+					</table>
+		         </form>
+          
+          </div>
+    </div>
+
+</div>
