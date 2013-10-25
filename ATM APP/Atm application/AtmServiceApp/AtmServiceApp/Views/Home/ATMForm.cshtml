@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "ATMForm";
+}
+
+
+
+<section class="testimonial" style=" padding:20px 55px">
+        <p>
+        <a href="/home/ATMForm/">
+            <button> 
+                <img src="../../Images/add.png" alt="Add Address" />
+                    <span> <b>New Entry</b></span>
+             </button>
+         </a>
+        <form action="/Home/save" method="post" id="atm_form">
+            <table style="font-size:12px; font-weight:400; color:#333; padding:10px 10px 0px 10px; background:#ECECEC ; width:870px; 
+					margin-top:3px; border: 1px solid #ccc; border-bottom:none " >
+                            <tr>
+                                    <td colspan="6"><h2 style="font-size:16px ">ATM Details</h2></td>
+                            </tr>                            
+														
+							<tr style="height:26px;">					
+                                 <td style="width:100px">ATM ID</td>
+                                 <td>
+                                    <input type="text" name="atm_id" id="atm_ID"/>
+                                    <input type="hidden" name="atm_guid" id="atm_GUID"/>
+                                 </td>
+                                 <td><div id="loading"></div></td>
+                                 <td style="width:110px">Hub City</td>
+                                 <td>
+                                        <input type="text" name="hub_city" readonly="readonly" id="hub_city"/>
+                                 </td>
+                                 <td style="width:105px">State</td>
+                                 <td>
+                                        <input type="text" name="hub_state" readonly="readonly" id="hub_state" />
+                                 </td> 
+						</tr>
+                           
+
+            </table>
+
+            <table style="font-size:12px; font-weight:400; color:#333; padding:0px 10px 10px 10px; background:#ECECEC ; width:870px; 
+					 border: 1px solid #ccc; border-top:none " >
+                            <tr>
+                                <td colspan="6"><h2 style="font-size:16px; "><br />Service Ticket Details</h2></td>
+                            </tr>                           
+														
+							<tr style="height:26px">
+					
+                                 <td style="width:100px">Error Code</td>
+                                 <td colspan="5">
+                                     <select name="error_code" id="error_code_select" style="width:290px">
+                                            <option value="" selected="selected">Select Error Code</option>
+                                            <option value="100000000"> AD -- (ATM Down) </option>
+                                            <option value="100000001"> JPF -- (Journal Printer Fatal) </option>
+                                            <option value="100000002"> JPO -- (Journal Printer Paper Out) </option>
+                                            <option value="100000003"> JPL -- (Journal Printer Paper Low) </option>
+                                            <option value="100000004"> RPF -- (Receipt Printer Paper Fatal) </option>
+                                            <option value="100000005"> RPO -- (Receipt Printer Paper Out) </option>
+                                            <option value="100000006"> RPL -- (Receipt Printer Paper Low) </option>
+                                            <option value="100000007"> MSB -- (Monitor Screen Blank) </option>
+                                            <option value="100000009"> EPP Failure -- (Encrypted Pinpad Failure) </option>
+                                            <option value="100000008"> JPRR -- (JP Ribbon Replacement) </option>
+                                            <option value="100000010"> RPRR -- ( RP Ribbon Replacement) </option>
+                                            <option value="100000011"> Other Faults </option>
+                                      </select>
+                                </td>
+                            </tr>
+
+                            <tr style="height:26px; width:100px">
+                                 <td style=" vertical-align:top">Comments</td>
+                                 <td colspan=5> <textarea name="comments" id="comments" style=" width:690px; height:55px"></textarea>                      
+                                </td>
+							</tr>
+                            <tr>
+                              <td></td>
+                              <td colspan=4 style="  padding:15px 0px 18px 0px ">
+                                    <input type="submit" value="Submit" id="submit_atm" style="height:27px; width:68px; font-size:17px; font-weight:400px" 
+                                          class="submit" />
+                                         <span  style="padding-left:80px">
+                                             <input type="reset" value="Clear" style="height:27px; width:68px;
+                                             font-size:17px; color:#FFFFFF; font-weight:400px" class="reset" />
+                                         </span>
+                              </td>
+                             
+                         </tr>
+
+                       </table><br />
+
+                        <table style="font-size:12px; font-weight:400; color:#333; padding:10px 10px 10px 10px; background:#ECECEC ; width:870px; 
+					 border: 1px solid #ccc; " >
+                            <tr>
+                                <td style="width:140px">Reference Ticket No.</td>
+                                <td>
+                                     <input type="text" id="reference_no" name="reference_number" readonly="readonly"/>
+                                </td>
+                               
+                            </tr>
+                            <tr style="height:40px">
+                                <td colspan= 2><span id="loading1" style="padding-left:40px"></span>
+                                <div id="after_save"></div>
+                                </td>
+                            </tr>
+                    </table>
+
+                </form>
+     </p>
+</section>

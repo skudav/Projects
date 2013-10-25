@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#atm_form").submit(function (e) {
+            e.preventDefault();
+            alert($(this).serialize());
+            var url = "/Home/save"; // the script where you handle the form input.
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(), // serializes the form's elements.
+                success: function (data) {
+                    
+                }
+            });
+        });
+
+        $("#atm_ID").blur(function () {
+            var url = "/Home/retrieveDetails"; // the script where you handle the form input.
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: { value: $(this).val() }, // serializes the form's elements.
+                success: function (data) {
+                    if (data == "") {
+                        $("#hub_state").val("");
+                        $("#hub_city").val("");
+                        alert("Please Enter Valid ATM ID");
+                    }
+                    $.each(data, function (i, object) {
+                        $.each(object, function (property, value) {
+                            if (property == "city") {
+                                $("#hub_city").val(value);
+                                valid = "true";
+                            } if (property == "state") {
+                                $("#hub_state").val(value);
+                            }
+
+                        });
+                    });
+                }
+            });
+        });
+    });
+</script>
+<form action="/Home/save" method="post" id="atm_form">
+<div>ATM ID</div> <input type="text" name="atm_id" id="atm_ID"/><br />
+<div>Hub City</div><input type="text" name="hub_city" readonly="readonly" id="hub_city"/>
+<div>Hub State</div><input type="text" name="hub_state" readonly="readonly" id="hub_state" /><br />
+
+<h2>Service Ticket</h2><br />
+<div>Error Code</div><select name="error_code">
+<option>AD</option>
+<option>RP</option>
+<option>IP</option>
+<option>RPL</option>
+</select><br />
+<div>Comments</div><textarea name="comments"></textarea><br />
+<input type="submit" value="submit" />
+<div>Reference Ticket No.</div><input type="text" name="reference_number" disabled="disabled" readonly="readonly"/>
+
+</form>
